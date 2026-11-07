@@ -229,6 +229,17 @@ a:hover {
   font-family: var(--font-logo);
 }
 
+/* три направления — подзаголовок под девизом */
+.directions {
+  margin: -8px 0 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
 .email {
   font-size: 16px;
   transition: color 0.2s ease;

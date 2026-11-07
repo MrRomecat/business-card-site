@@ -8,13 +8,13 @@
 
   var META = {
     ru: {
-      title: 'Сергей Бондарчук — Иду путём, который меня вдохновляет',
-      description: 'Сергей Бондарчук. Иду путём, который меня вдохновляет. Консультации — пишите на info@bondarchuksergey.com или в Telegram.',
+      title: 'Сергей Бондарчук — личностный рост, деньги, продвижение в социальных сетях',
+      description: 'Сергей Бондарчук: личностный рост, деньги и продвижение в социальных сетях. Иду путём, который меня вдохновляет. Консультации — пишите на info@bondarchuksergey.com или в Telegram.',
       alt: 'Сергей Бондарчук'
     },
     en: {
-      title: 'Sergey Bondarchuk — I walk the path that inspires me',
-      description: 'Sergey Bondarchuk. I walk the path that inspires me. For a consultation, write to info@bondarchuksergey.com or on Telegram.',
+      title: 'Sergey Bondarchuk — Personal Growth, Money, Social Media Promotion',
+      description: 'Sergey Bondarchuk: personal growth, money and social media promotion. I walk the path that inspires me. For a consultation, write to info@bondarchuksergey.com or on Telegram.',
       alt: 'Sergey Bondarchuk'
     }
   };
@@ -78,7 +78,7 @@
   var container = document.querySelector('.leaves');
   if (!container) return;
   var leaves = Array.prototype.slice.call(container.children);
-  var obstacleSelector = '.logo, .tagline, .lang-switch, .portrait, .title, .email, .btn';
+  var obstacleSelector = '.logo, .tagline, .lang-switch, .portrait, .title, .directions, .email, .btn';
 
   function rand(min, max) {
     return min + Math.random() * (max - min);

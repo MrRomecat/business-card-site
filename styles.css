@@ -223,6 +223,12 @@ a:hover {
   text-wrap: balance;
 }
 
+/* Caprasimo не содержит кириллицы, поэтому русский заголовок отображается Comfortaa;
+   в английской версии используем тот же Comfortaa, чтобы начертание совпадало */
+[data-lang="en"] .title {
+  font-family: var(--font-logo);
+}
+
 .email {
   font-size: 16px;
   transition: color 0.2s ease;
@@ -233,6 +239,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   min-height: 44px;
+  min-width: 160px;
   padding: 12px 24px;
   border-radius: 999px;
   background: var(--color-accent);
@@ -264,6 +271,18 @@ a:hover {
 
   50% {
     transform: translateY(-9px) rotate(var(--rot));
+  }
+}
+
+/* волна для мобильного облака: лёгкое покачивание со сдвигом фазы */
+@keyframes leafwave {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rot-m));
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(var(--rot-m));
   }
 }
 
@@ -383,15 +402,15 @@ a:hover {
     display: inline-block;
     font-size: 12px;
     transform: rotate(var(--rot-m));
-    animation: none;
+    animation: leafwave 4.8s ease-in-out var(--delay-m, 0s) infinite;
   }
 
-  .leaf:nth-child(6n + 1) { --rot-m: -4deg; }
-  .leaf:nth-child(6n + 2) { --rot-m: 3deg; }
-  .leaf:nth-child(6n + 3) { --rot-m: -2deg; }
-  .leaf:nth-child(6n + 4) { --rot-m: 4deg; }
-  .leaf:nth-child(6n + 5) { --rot-m: -3deg; }
-  .leaf:nth-child(6n + 6) { --rot-m: 2deg; }
+  .leaf:nth-child(6n + 1) { --rot-m: -4deg; --delay-m: 0s; }
+  .leaf:nth-child(6n + 2) { --rot-m: 3deg;  --delay-m: -0.8s; }
+  .leaf:nth-child(6n + 3) { --rot-m: -2deg; --delay-m: -1.6s; }
+  .leaf:nth-child(6n + 4) { --rot-m: 4deg;  --delay-m: -2.4s; }
+  .leaf:nth-child(6n + 5) { --rot-m: -3deg; --delay-m: -3.2s; }
+  .leaf:nth-child(6n + 6) { --rot-m: 2deg;  --delay-m: -4s; }
 }
 
 /* — без анимаций для тех, кто их отключил — */

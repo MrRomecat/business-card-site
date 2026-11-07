@@ -4,7 +4,7 @@
 
 Сайт одинаково хорошо работает на телефонах, планшетах, ноутбуках и больших мониторах.
 
-**[Демо →](https://mrromecat.github.io/business-card-site/)**
+**[Демо →](https://bondarchuksergey.com/)** (зеркало на GitHub Pages: [mrromecat.github.io/business-card-site](https://mrromecat.github.io/business-card-site/))
 
 ## Что умеет
 
@@ -65,7 +65,7 @@ python -m http.server 8765
 - Netlify, Vercel, Cloudflare Pages — перетащить папку в интерфейс.
 - Обычный хостинг — загрузить файлы по FTP.
 
-Для своего домена пропишите его в `canonical` и `og:url` в `index.html`.
+Для своего домена пропишите его в `canonical` и `og:url` в `index.html`, а для GitHub Pages — ещё в файле `CNAME` (одна строка с доменом) и в DNS у регистратора: A-записи на `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` и CNAME `www` → `<логин>.github.io`.
 
 ## Технологии
 

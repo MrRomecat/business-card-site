@@ -4,7 +4,7 @@
 
 Сайт одинаково хорошо работает на телефонах, планшетах, ноутбуках и больших мониторах.
 
-**[Демо →](https://mrromecat.github.io/bondarchuksergey.com/)**
+**[Демо →](https://mrromecat.github.io/business-card-site/)**
 
 ## Что умеет
 

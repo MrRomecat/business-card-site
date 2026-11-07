@@ -1,0 +1,408 @@
+/* ==========================================================================
+   bondarchuksergey.com — сайт-заглушка
+   Токены — из дизайн-системы Organic (_handoff/organic-styles.css)
+   ========================================================================== */
+
+:root {
+  --color-bg: #f5ead8;
+  --color-text: #201e1d;
+  --color-accent: #c67139;
+
+  --color-neutral-100: #f9f4ed;
+  --color-neutral-700: #645c50;
+  --color-neutral-800: #474238;
+
+  --color-accent-600: #b2622d;
+  --color-accent-700: #8c491a;
+  --color-accent-800: #643312;
+
+  --color-accent-2-700: #56633f;
+  --color-accent-2-800: #3d472b;
+
+  --font-heading: "Caprasimo", "Comfortaa", system-ui, sans-serif;
+  --font-logo: "Comfortaa", "Caprasimo", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2e2b25 22%, transparent);
+
+  --photo-size: clamp(180px, 28vmin, 260px);
+}
+
+/* — base — */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-accent-700);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-600);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+/* — переключение языка без перерисовки DOM — */
+[data-lang="en"] .t-ru,
+[data-lang="ru"] .t-en {
+  display: none;
+}
+
+/* ==========================================================================
+   Экран
+   ========================================================================== */
+
+.page {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 640px;
+  overflow: hidden;
+}
+
+/* — шапка — */
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 22px 40px;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+}
+
+.tagline::before,
+.tagline::after {
+  content: "";
+  flex: none;
+  width: 32px;
+  height: 1.5px;
+  background: var(--color-accent-700);
+}
+
+/* — переключатель языка — */
+.lang-switch {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 4;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--color-neutral-100);
+}
+
+.lang-switch__btn {
+  margin: 0;
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-neutral-800);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-switch__btn:hover {
+  background: color-mix(in srgb, var(--color-text) 7%, transparent);
+}
+
+.lang-switch__btn[aria-pressed="true"] {
+  background: var(--color-accent);
+  color: var(--color-neutral-100);
+  cursor: default;
+}
+
+/* — центральная колонка — */
+.main {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.main > :not(.leaves) {
+  position: relative;
+  z-index: 1;
+}
+
+.portrait {
+  flex: none;
+  width: var(--photo-size);
+  height: var(--photo-size);
+  overflow: hidden;
+  border: 6px solid var(--color-neutral-100);
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  filter: saturate(1.1);
+}
+
+.portrait__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  max-width: 640px;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.email {
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-neutral-100);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--color-accent-600);
+  color: var(--color-neutral-100);
+}
+
+.btn:active {
+  background: var(--color-accent-700);
+}
+
+/* ==========================================================================
+   «Листва» — 20 фраз на разных языках
+   ========================================================================== */
+
+@keyframes leafdrift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rot));
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(var(--rot));
+  }
+}
+
+.leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  font-size: var(--fs, 14px);
+  white-space: nowrap;
+  color: var(--c, var(--color-neutral-700));
+  transform: rotate(var(--rot));
+  animation: leafdrift 8s ease-in-out var(--delay, 0s) infinite;
+}
+
+/* позиции, размеры, цвета и наклоны — точно по прототипу */
+.leaf:nth-child(1)  { --rot: -8deg; --fs: 17px; --c: var(--color-accent-700);   --delay: -1s;   top: 7%;     left: 6%; }
+.leaf:nth-child(2)  { --rot: 5deg;  --fs: 14px; --c: var(--color-neutral-700);  --delay: -3s;   top: 18%;    left: 15%; }
+.leaf:nth-child(3)  { --rot: -4deg; --fs: 18px; --c: var(--color-accent-2-700); --delay: -5s;   top: 9%;     left: 67%; }
+.leaf:nth-child(4)  { --rot: 9deg;  --fs: 15px; --c: var(--color-neutral-800);  --delay: -2s;   top: 20%;    right: 7%; }
+.leaf:nth-child(5)  { --rot: 4deg;  --fs: 14px; --c: var(--color-accent-2-800); --delay: -6s;   top: 33%;    left: 4%; }
+.leaf:nth-child(6)  { --rot: -7deg; --fs: 15px; --c: var(--color-accent-800);   --delay: -4s;   top: 42%;    right: 6%; }
+.leaf:nth-child(7)  { --rot: 4deg;  --fs: 17px; --c: var(--color-neutral-700);  --delay: -7s;   top: 51%;    right: 13%; }
+.leaf:nth-child(8)  { --rot: -5deg; --fs: 15px; --c: var(--color-accent-700);   --delay: -2.5s; top: 50%;    left: 7%; }
+.leaf:nth-child(9)  { --rot: 8deg;  --fs: 16px; --c: var(--color-accent-2-700); --delay: -1.5s; top: 60%;    right: 5%; }
+.leaf:nth-child(10) { --rot: -9deg; --fs: 15px; --c: var(--color-neutral-800);  --delay: -5.5s; top: 61%;    left: 14%; }
+.leaf:nth-child(11) { --rot: 5deg;  --fs: 15px; --c: var(--color-accent-800);   --delay: -3.5s; top: 70%;    right: 11%; }
+.leaf:nth-child(12) { --rot: -6deg; --fs: 14px; --c: var(--color-neutral-700);  --delay: -6.5s; bottom: 12%; left: 22%; }
+.leaf:nth-child(13) { --rot: 7deg;  --fs: 14px; --c: var(--color-accent-2-800); --delay: -0.5s; bottom: 16%; right: 6%; }
+.leaf:nth-child(14) { --rot: 4deg;  --fs: 14px; --c: var(--color-accent-700);   --delay: -4.5s; top: 81%;    left: 16%; }
+.leaf:nth-child(15) { --rot: -6deg; --fs: 14px; --c: var(--color-accent-2-700); --delay: -7.5s; top: 25%;    left: 10%; }
+.leaf:nth-child(16) { --rot: 3deg;  --fs: 15px; --c: var(--color-accent-800);   --delay: -2.2s; top: 34%;    right: 14%; }
+.leaf:nth-child(17) { --rot: -3deg; --fs: 13px; --c: var(--color-neutral-700);  --delay: -5.2s; top: 41%;    left: 18%; }
+.leaf:nth-child(18) { --rot: 6deg;  --fs: 14px; --c: var(--color-accent-2-800); --delay: -1.8s; top: 71%;    left: 6%; }
+.leaf:nth-child(19) { --rot: -4deg; --fs: 15px; --c: var(--color-accent-700);   --delay: -3.8s; bottom: 5%;  left: 8%; }
+.leaf:nth-child(20) { --rot: 8deg;  --fs: 13px; --c: var(--color-neutral-800);  --delay: -6.8s; bottom: 4%;  right: 33%; }
+
+/* часть листьев наезжает на центр на узких/низких экранах */
+@media (max-width: 1100px), (max-height: 700px) {
+  .leaf--wide {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Планшеты (721–1100px)
+   ========================================================================== */
+
+@media (min-width: 721px) and (max-width: 1100px) {
+  /* отодвигаем от фото на узких экранах */
+  .leaf:nth-child(16) { right: 8%; }
+}
+
+/* в портрете места по бокам от фото мало — фразы уходят в верхнюю и нижнюю полосы */
+@media (min-width: 721px) and (max-width: 1100px) and (orientation: portrait) {
+  .leaf:nth-child(1)  { top: 12%; left: 5%; }
+  .leaf:nth-child(3)  { top: 10%; right: 6%; left: auto; }
+  .leaf:nth-child(2)  { top: 18%; left: 12%; }
+  .leaf:nth-child(4)  { top: 18%; right: 8%; }
+  .leaf:nth-child(15) { top: 24%; left: 4%; }
+  .leaf:nth-child(16) { top: 25%; right: 5%; }
+  .leaf:nth-child(5)  { top: auto; bottom: 22%; left: 8%; }
+}
+
+/* ==========================================================================
+   Мобильные (≤ 720px) и телефоны в альбомной ориентации
+   ========================================================================== */
+
+@media (max-width: 720px), (max-width: 1000px) and (max-height: 500px) {
+  .page {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .header,
+  .main {
+    position: static;
+  }
+
+  .main {
+    padding: 16px 20px 36px;
+  }
+
+  .lang-switch {
+    top: 12px;
+    right: 12px;
+    padding: 3px;
+  }
+
+  .lang-switch__btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* фразы — облаком под кнопкой */
+  .leaves {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+    max-width: 440px;
+    margin-top: 10px;
+  }
+
+  .leaf,
+  .leaf--wide {
+    position: static;
+    display: inline-block;
+    font-size: 12px;
+    transform: rotate(var(--rot-m));
+    animation: none;
+  }
+
+  .leaf:nth-child(6n + 1) { --rot-m: -4deg; }
+  .leaf:nth-child(6n + 2) { --rot-m: 3deg; }
+  .leaf:nth-child(6n + 3) { --rot-m: -2deg; }
+  .leaf:nth-child(6n + 4) { --rot-m: 4deg; }
+  .leaf:nth-child(6n + 5) { --rot-m: -3deg; }
+  .leaf:nth-child(6n + 6) { --rot-m: 2deg; }
+}
+
+/* — без анимаций для тех, кто их отключил — */
+@media (prefers-reduced-motion: reduce) {
+  .leaf {
+    animation: none;
+  }
+
+  .lang-switch__btn,
+  .email,
+  .btn {
+    transition: none;
+  }
+}

@@ -1,0 +1,13 @@
+# системные
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# редакторы и локальные настройки
+.claude/
+.vscode/
+.idea/
+
+# временное
+*.log
+*.zip

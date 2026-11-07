@@ -78,7 +78,7 @@
   var container = document.querySelector('.leaves');
   if (!container) return;
   var leaves = Array.prototype.slice.call(container.children);
-  var obstacleSelector = '.logo, .tagline, .lang-switch, .portrait, .title, .directions, .email, .btn';
+  var obstacleSelector = '.logo, .tagline, .lang-switch, .portrait, .title, .email, .btn, .footer__text';
 
   function rand(min, max) {
     return min + Math.random() * (max - min);

@@ -229,17 +229,6 @@ a:hover {
   font-family: var(--font-logo);
 }
 
-/* три направления — подзаголовок под девизом */
-.directions {
-  margin: -8px 0 0;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent-700);
-}
-
 .email {
   font-size: 16px;
   transition: color 0.2s ease;
@@ -268,6 +257,30 @@ a:hover {
 
 .btn:active {
   background: var(--color-accent-700);
+}
+
+/* — подвал: направления работы, мелкой строкой у нижнего края — */
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  padding: 12px 20px 14px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.footer__text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+  opacity: 0.85;
 }
 
 /* ==========================================================================
@@ -377,12 +390,22 @@ a:hover {
   }
 
   .header,
-  .main {
+  .main,
+  .footer {
     position: static;
   }
 
   .main {
-    padding: 16px 20px 36px;
+    padding: 16px 20px 24px;
+  }
+
+  .footer {
+    padding: 0 20px 24px;
+  }
+
+  .footer__text {
+    font-size: 9px;
+    letter-spacing: 0.14em;
   }
 
   .lang-switch {
